@@ -74,6 +74,7 @@ header{
 }
 /* 헤더 메뉴 리스트 클래스 */
 .menuList{
+    white-space: nowrap;
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -92,18 +93,22 @@ header{
 
 .dropList{
     height: 0;
+    width: 0;
     opacity: 0;
 }
 
 /* 헤더 아이콘메뉴 */
 #headerNavIconMenu{
-    width: 10%;
-    height: 100%;
+    width: fit-content;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
     margin-left: auto;
     fill:white;
 }
 /* 헤더 아이콘메뉴 svg 조정 */
-#headerNavIconMenu > .headerNavList > li > svg{
+#headerNavIconMenu > svg{
     width: auto;
     max-height: 25px;
     padding: 0 10px;
@@ -130,6 +135,8 @@ header{
 header:hover .menuList{
     color: #222;
     font: #222;
+}
+header:hover #headerNavIconMenu svg{
     fill:#222;
 }
 
@@ -171,30 +178,27 @@ header:hover .menuList{
 }
 
 /* 반응형 */
-/* @media (max-width: 800px) {
-    #headerIconNav {
+@media (max-width: 1300px) {
+    #headerNavIconMenu {
         width: 0px;
         visibility: hidden;
     }
-    #headerNav{
-        width: 100%;
-    }
-    #headerNav li:last-child{
-        width: 0px;
-        visibility: hidden;
+    #headerNavMenuBtn{
+        height: 100%;
+        width: 30%;
     }
 }
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
     header:hover{
         pointer-events: none;
     }
-    #headerMenuBtn{
+    #headerNavMenuBtn{
         padding: 0 25px 0 25px;
         width: 50px;
         visibility: visible;
     }
-    #headerNavMenu{
+    #headerNavTextMenu{
         width: 0px;
         visibility: hidden;
     }
-} */
+}
