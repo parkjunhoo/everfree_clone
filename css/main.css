@@ -65,7 +65,7 @@ header{
 /* 헤더 로고 img */
 #headerLogoImg{
     height: 100%;
-    width:100%;
+    width:auto;
 }
 
 /* headerNavTextMenu *//* 헤더 Text 메뉴  */
@@ -89,6 +89,12 @@ header{
     flex-wrap: wrap;
     align-items: center;
     padding: 0 25px 0 25px;
+}
+
+.textUnderline{
+    width: 100%;
+    height: 100%;
+    background-color: #222;
 }
 
 .dropList{
@@ -152,28 +158,27 @@ header:hover #headerNavIconMenu svg{
 
 }
 
-.dropListHeader>li>div:nth-child(1):hover~.dropList{
+.dropListHeader>li>div:hover~.dropList{
     height: fit-content;
     opacity: 1;
     padding-bottom: 30px;
-    
 }
 
-.dropListHeader>li>div:nth-child(1):hover~.dropList{
+.dropListHeader>li>div:hover~.dropList{
     height: fit-content;
     opacity: 1;
     padding-bottom: 30px;
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
 }
 
-.dropListHeader>li>div:nth-child(1):not(:hover)~.dropList{
+.dropListHeader>li>div::not(:hover)~.dropList{
     height: 0px;
     opacity: 0;
     padding-bottom: 0px;
     transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
 }
 
-.dropListHeader>li>div:nth-child(1):not(:hover)~ #headerMenuBackground{
+.dropListHeader>li>div:not(:hover)~ #headerMenuBackground{
     opacity: 0;
     height: 0%;
     display: block;
