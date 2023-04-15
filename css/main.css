@@ -1,5 +1,87 @@
 #mainPageCarouselSection{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
+}
+.outer{
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+}
+.grayBG{
+    left:0;
+    background-color: #fbfbfb;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 80px;
+}
+#promotinSection{
+    background-color: white;
+    max-width: 100%;
+}
+.promotionHR{
+    width: 50px;
+    padding: 100px 0px 25px 3%;
+}
+.promotionHR>hr{
+    height:1px;
+    background-color: black;
+}
+.rankingList{
+    display: flex;
+}
+.rankingListItem{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.rankingList h4{
+    font-size: 18px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.rankingList>li{
+    display: flex;
+    height: 20%;
+    margin: 0 auto;
+    padding:0 3%;
+}
+.rankingList p{
+    color: #787878;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: color .25s ease-out;
+}
+
+.rankingList img{
+    display: block;
+    margin-left: auto;
+    width: 88%;
+    height: auto;
+}
+#promotionRanking{
+    width: 30%;
+    margin:0 auto;
+}
+
+.rankingListItem:hover>p{
+    color:black;
+}
+
+
+@media (max-width: 1100px) {
+    .outer{
+        width: 100%;
+    }
+    .rankingList>li{
+        padding:0;
+    }
+    .rankingList h4{
+        position: absolute;
+    }
+    .promotionHR{
+        width: 50px;
+        padding: 100px 0px 25px 0px;
+    }
 }
