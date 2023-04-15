@@ -1,0 +1,205 @@
+
+
+/* -------------------------------- *//* -------------------------------- */
+
+/* 헤더
+         header -   |headerNav
+
+*/
+header{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 20px;
+    z-index: 999;
+    overflow: visible;
+}
+
+/* 헤더 호버시 내려오는 배경 */
+#headerMenuBackground{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height:0%;
+    background-color: white;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+    opacity: 0;
+}
+/* -------------------------------- *//* -------------------------------- */
+
+/* 헤더의 Nav 영역 묶은 div */
+/* 
+    headerNav-  |-headerNavLogoHolder
+                |-headerNavTextMenu
+                |-headerNavIconMenu
+                |-headerNavMenuBtn
+*/
+
+
+#headerNav{
+    position: absolute;
+    display: flex;
+    width: 100%;
+}
+
+/* headerNavLogoHolder *//* 헤더 로고 div  */
+#headerNavLogoHolder{
+    height:80px;
+    z-index: 2;
+    padding: 0 25px 0 25px;
+}
+/* 헤더 로고 img */
+#headerLogoImg{
+    height: 100%;
+    width:auto;
+}
+
+/* headerNavTextMenu *//* 헤더 Text 메뉴  */
+#headerNavTextMenu{
+    width: 60%;
+}
+/* 헤더 메뉴 리스트 클래스 */
+.menuList{
+    white-space: nowrap;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    color: white;
+    list-style-type : none;
+}
+
+.menuList li>div{
+    width: fit-content;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 25px 0 25px;
+}
+
+.textUnderline{
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+}
+
+.dropList{
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+.dropList li>p{
+    padding: 0 25px 0 25px;
+}
+
+/* 헤더 아이콘메뉴 */
+#headerNavIconMenu{
+    width: fit-content;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-left: auto;
+    fill:white;
+}
+/* 헤더 아이콘메뉴 svg 조정 */
+#headerNavIconMenu > svg{
+    width: auto;
+    max-height: 25px;
+    padding: 0 10px;
+}
+
+
+
+/* 버거메뉴 버튼 width 작을때나타남*/
+#headerNavMenuBtn{
+    float: right;
+    width: 0;
+    align-self: center;
+    visibility: hidden;
+    padding: 0 25px;
+    fill: white;
+}
+
+/* -------------------------------- *//* -------------------------------- */
+
+
+
+
+/* 헤더 호버시 글자,svg 색변경 */
+header:hover .menuList{
+    color: #222;
+    font: #222;
+}
+header:hover #headerNavIconMenu svg{
+    fill:#222;
+}
+
+/* 헤더 호버시 배경 내려옴 */
+ header:hover #headerMenuBackground{
+    opacity: 1;
+    height: 90%;
+    display: block;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+
+}
+
+.dropListHeader>li>div:hover~.dropList{
+    height: fit-content;
+    opacity: 1;
+    padding-bottom: 30px;
+}
+
+.dropListHeader>li>div:hover~.dropList{
+    height: fit-content;
+    opacity: 1;
+    padding-bottom: 30px;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+}
+
+.dropListHeader>li>div::not(:hover)~.dropList{
+    height: 0px;
+    opacity: 0;
+    padding-bottom: 0px;
+    transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+}
+
+.dropListHeader>li>div:not(:hover)~ #headerMenuBackground{
+    opacity: 0;
+    height: 0%;
+    display: block;
+    transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+}
+
+/* 반응형 */
+@media (max-width: 1300px) {
+    #headerNavIconMenu {
+        width: 0px;
+        visibility: hidden;
+    }
+    #headerNavMenuBtn{
+        height: 100%;
+        width: 30%;
+    }
+}
+@media (max-width: 1000px) {
+    header:hover{
+        pointer-events: none;
+    }
+    #headerNavMenuBtn{
+        padding: 0 25px 0 25px;
+        width: 50px;
+        visibility: visible;
+    }
+    #headerNavTextMenu{
+        width: 0px;
+        visibility: hidden;
+    }
+}
