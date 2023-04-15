@@ -31,10 +31,6 @@ class Carousel extends HTMLElement{
 
 
     connectedCallback(){
-
-        //쿼리셀렉터로 .carouselItem을 모두 긁어와서 
-
-
         // HTML 구조
         //     <div class="carouselList">
         //      innerHTML
@@ -139,7 +135,6 @@ class Carousel extends HTMLElement{
      * 현재 index로 itemContainer의 left값을 조정해 화면에 보이게 이동시킵니다.
      */
     move(){
-        
         this._itemContainer.style.left = `-${this._index*100}%`;
     }
 }
