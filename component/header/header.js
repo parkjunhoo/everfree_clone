@@ -7,25 +7,25 @@ class Header extends HTMLElement{
         this._logoSrc = "../resources/images/logo.png";
         this._textMenuList = [
             {
-                name:"New(10% Sale)",
+                name:"New(10% SALE)",
                 subMenu:[
-                    "New(10% Sale)"
+                    "New(10% SALE)"
                 ]
             },
             {
-                name:"DB에서",
+                name:"Best",
                 subMenu:[
                     "Best"
                 ]
             },
             {
-                name:"받아와야",
+                name:"Outer",
                 subMenu:[
                     "Outer"
                 ]
             },
             {
-                name:"할것같습니다",
+                name:"Top",
                 subMenu:[
                     "Shirt",
                     "Long Sleeve",
@@ -34,7 +34,7 @@ class Header extends HTMLElement{
                 ]
             },
             {
-                name:"JSON?",
+                name:"Botton",
                 subMenu:[
                     "Jean",
                     "Pants",

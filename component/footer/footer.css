@@ -1,0 +1,125 @@
+footer{
+    background-color: white;
+    max-width: 100%;
+    margin:0 auto;
+    padding:8vh 30px 8vh 30px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+.footerOuter{
+    width:97%;
+    margin:0 auto;
+}
+.footerOuter>hr{
+    height: 1.3px;
+    background-color: black;
+    margin-bottom: 5vh;
+}
+.footerOuter h5{
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.footerContentDiv{
+    width: 100%;
+    display: flex;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.deskInfo{
+    width: 100%;
+}
+.deskLinkDiv{
+    display: flex;
+    padding-top:10px;
+    width: 100%;
+    height: 100%;
+}
+.deskLinkDiv a{
+    margin-right:10px;
+    font-weight: bold;
+    color:black;
+    text-decoration: none;
+}
+
+.footerTextUnderline{
+    width: 0%;
+    height: 1px;
+    background-color: #222;
+    transition: .5s;
+}
+
+.deskLinkDiv a:hover>.footerTextUnderline{
+    width:100%;
+}
+
+
+.footerContentLeftDiv{
+    width: 50%;
+}
+.footerContentRightDiv{
+    width: 50%;
+    display: flex;
+}
+.footerContentRightDiv>div{
+    width: 25%;
+}
+.footerIconMenu{
+    width:1%;
+}
+
+.footerContentRightDiv .date{
+    color: #aaa;
+    font-size: 11px;
+    margin-left: 5px;
+}
+.footerMenuDiv a{
+    display: block;
+    text-decoration: none;
+    color:black;
+}
+
+.companyDescDiv{
+    margin-top: 40px;
+}
+.companyDescDiv ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    white-space: nowrap;
+    color:#787878;
+}
+.companyDescDiv ul>li{
+    font-size: 11px;
+    line-height: 1.65;
+    padding-right: 10px;
+}
+.copyright{
+    color:#aaa;
+    font-size:11px;
+    margin-top:15px;
+}
+
+
+
+@media (max-width:1300px){
+    .footerContentDiv{
+        display: block;
+    }
+    .footerContentLeftDiv{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .footerContentRightDiv{
+        width: 100%;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width:1000px){
+    .footerContentRightDiv{
+        width: 0%;
+        display: none;
+    }
+}

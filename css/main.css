@@ -40,7 +40,7 @@ section{
 .promotionSection h4{
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
 }
 .rankingList>li{
     display: flex;
@@ -125,6 +125,16 @@ section{
     height: 100vh;
     background-color: white;
     background-image: url("../resources/images/bg0.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.decoSection2{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    background-image: url("../resources/images/bg1.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
