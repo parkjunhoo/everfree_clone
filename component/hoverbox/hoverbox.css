@@ -1,0 +1,43 @@
+.superBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.beforeBox{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.afterBox{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s;
+}
+.upAnim{
+    position: relative;
+    left: 0;
+    transform:translateY(100%);
+    transition: .7s;
+}
+.downAnim{
+    position: relative;
+    transform:translateY(-100%);
+    transition: .7s;
+}
+.superBox:hover .afterBox{
+    opacity: 1;
+}
+
+.superBox:hover .upAnim{
+    transform:translateY(0);
+}
+.superBox:hover .downAnim{
+    transform:translateY(0);
+}

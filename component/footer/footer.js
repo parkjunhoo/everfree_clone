@@ -66,6 +66,12 @@ class Footer extends HTMLElement{
     }
 
     connectedCallback(){
+        let headLink = document.createElement("link");
+        let head = document.getElementsByTagName("head")[0];
+        headLink.rel = "stylesheet";
+        headLink.type = "text/css";
+        headLink.href = "../component/footer/footer.css";
+        head.appendChild(headLink);
         // <footer>
         //     <div class="footerOuter">
         //         <hr>

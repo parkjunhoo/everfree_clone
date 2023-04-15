@@ -65,6 +65,12 @@ class Header extends HTMLElement{
         ];
     }
     connectedCallback(){
+        let headLink = document.createElement("link");
+        let head = document.getElementsByTagName("head")[0];
+        headLink.rel = "stylesheet";
+        headLink.type = "text/css";
+        headLink.href = "../component/header/header.css";
+        head.appendChild(headLink);
         // <div id="headerNav">
         //         <div id="headerMenuBackground"></div>
         //         <div id="headerNavLogoHolder">
