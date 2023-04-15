@@ -1,3 +1,6 @@
+section{
+    max-width: 100%;
+}
 #mainPageCarouselSection{
     width: 100%;
     height: 100vh;
@@ -5,23 +8,22 @@
 }
 .outer{
     position: relative;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
 }
 .grayBG{
-    left:0;
     background-color: #fbfbfb;
     width: 100%;
     height: fit-content;
     padding-bottom: 80px;
 }
-#promotinSection{
+.promotionSection{
     background-color: white;
-    max-width: 100%;
 }
 .promotionHR{
     width: 50px;
-    padding: 100px 0px 25px 3%;
+    padding: 100px 0px 25px 1%;
+    white-space: nowrap;
 }
 .promotionHR>hr{
     height:1px;
@@ -35,9 +37,8 @@
     height: 100%;
     cursor: pointer;
 }
-.rankingList h4{
+.promotionSection h4{
     font-size: 18px;
-    margin-right: 10px;
     font-weight: bold;
     font-family: 'Josefin Sans', sans-serif;
 }
@@ -45,7 +46,7 @@
     display: flex;
     height: 20%;
     margin: 0 auto;
-    padding:0 3%;
+    padding:0 1%;
 }
 .rankingList p{
     color: #787878;
@@ -70,6 +71,27 @@
 }
 
 
+.promotionTable{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+}
+.promotionTable .productBG{
+    background-image: url(https://www.everfree.co.kr/shopimages/manish/0130070010722.jpg?1655623346%27);
+    
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.promotionProduct{
+    box-sizing: border-box;
+    padding: 2px;
+    width: 25%;
+    height: 22.25vw;
+    
+}
+
+
 @media (max-width: 1100px) {
     .outer{
         width: 100%;
@@ -78,10 +100,31 @@
         padding:0;
     }
     .rankingList h4{
-        position: absolute;
+        display: none;
+        width: 0;
+        height: 0;
     }
     .promotionHR{
         width: 50px;
         padding: 100px 0px 25px 0px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+.decoSection{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("http://yam0513.diskn.com/promo/hero/a-01.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
