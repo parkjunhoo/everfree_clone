@@ -123,8 +123,10 @@ section{
 .decoSection{
     width: 100vw;
     height: 100vh;
-    background-image: url("http://yam0513.diskn.com/promo/hero/a-01.jpg");
+    background-color: white;
+    background-image: url("../resources/images/bg0.png");
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }

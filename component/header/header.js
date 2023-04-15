@@ -74,59 +74,15 @@ class Header extends HTMLElement{
         //         <div id="headerNavTextMenu">
         //             <ul class="menuList dropListHeader">
         //                 <li>
-        //                     <div><p>New(10% Sale)</p></div>
+        //                     <div>
+        //                          <p>
+        //                              New(10% Sale)
+        //                              <div class="menuListUnderline">
+        //                              </div>
+        //                          </p>
+        //                      </div>
         //                     <ul class="dropList">
         //                         <li><p>New(10% Sale)</p></li>
-        //                     </ul>
-        //                 </li>
-        //                 <li>
-        //                     <div><p>Best</p></div>
-        //                     <ul class="dropList">
-        //                         <li><p>Best</p></li>
-        //                     </ul>
-        //                 </li>
-        //                 <li>
-        //                     <div><p>Outer</p></div>
-        //                     <ul class="dropList">
-        //                         <li><p>Outer</p></li>
-        //                     </ul>
-        //                 </li>
-        //                 <li>
-        //                     <div><p>Top</p></div>
-        //                     <ul class="dropList">
-        //                         <li><p>Shirt</p></li>
-        //                         <li><p>Long Sleeve</p></li>
-        //                         <li><p>Knit</p></li>
-        //                         <li><p>Short Sleeve</p></li>
-        //                     </ul>
-        //                 </li>
-        //                 <li>
-        //                     <div><p>Bottom</p></div>
-        //                     <ul class="dropList">
-        //                         <li><p>Jean</p></li>
-        //                         <li><p>Pants</p></li>
-        //                         <li><p>Short Guys</p></li>
-        //                     </ul>
-        //                 </li>
-        //                 <li>
-        //                     <div><p>Acc</p></div>
-        //                     <ul class="dropList">
-        //                         <li><p>Shoes</p></li>
-        //                         <li><p>Bag</p></li>
-        //                         <li><p>Accessories</p></li>
-        //                         <li><p>Season off</p></li>
-        //                     </ul>
-        //                 </li>
-        //                 <li>
-        //                     <div><p>Suit</p></div>
-        //                     <ul class="dropList">
-        //                         <li><p>Suit</p></li>
-        //                     </ul>
-        //                 </li>
-        //                 <li>
-        //                     <div><p>SET EVENT</p></div>
-        //                     <ul class="dropList">
-        //                         <li><p>SET EVENT</p></li>
         //                     </ul>
         //                 </li>
         //             </ul>
@@ -181,6 +137,9 @@ class Header extends HTMLElement{
                             let nameDiv = document.createElement("div");
                             let nameP = document.createElement("p");
                             nameP.innerHTML = this._textMenuList[i].name;
+                                let menuListUnderline = document.createElement("div");
+                                menuListUnderline.classList.add("menuListUnderline");
+                                nameP.appendChild(menuListUnderline);
                             nameDiv.appendChild(nameP);
                             li.appendChild(nameDiv);
                             

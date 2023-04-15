@@ -74,7 +74,11 @@ header{
     color: white;
     list-style-type : none;
 }
-
+.menuListUnderline{
+    width: 0px;
+    border-bottom: 1.2px solid black;
+    transition: .5s;
+}
 .menuList li>div{
     width: fit-content;
     height: 80px;
@@ -91,12 +95,16 @@ header{
 }
 
 .dropList{
-    height: 0;
-    width: 0;
+    height: 0px;
+    width: 0px;
     opacity: 0;
 }
+
 .dropList li>p{
     padding: 0 25px 0 25px;
+}
+.dropList *{
+    height: 0px;
 }
 
 /* 헤더 아이콘메뉴 */
@@ -148,35 +156,21 @@ header:hover #headerNavIconMenu svg{
     height: 90%;
     display: block;
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
-
 }
 
-.dropListHeader>li>div:hover~.dropList{
-    height: fit-content;
-    opacity: 1;
-    padding-bottom: 30px;
+.dropListHeader>li:hover .menuListUnderline{
+    width: 100%;
 }
-
-.dropListHeader>li>div:hover~.dropList{
+.dropListHeader>li:hover>.dropList{
     height: fit-content;
     opacity: 1;
     padding-bottom: 30px;
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
 }
-
-.dropListHeader>li>div::not(:hover)~.dropList{
-    height: 0px;
-    opacity: 0;
-    padding-bottom: 0px;
-    transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+.dropListHeader>li:hover>.dropList *{
+    height: auto;
 }
 
-.dropListHeader>li>div:not(:hover)~ #headerMenuBackground{
-    opacity: 0;
-    height: 0%;
-    display: block;
-    transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
-}
 
 /* 반응형 */
 @media (max-width: 1300px) {
