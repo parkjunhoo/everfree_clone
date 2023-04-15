@@ -86,7 +86,7 @@ slot{
     border: none;
     padding:10px;
     box-sizing: content-box;
-    width:4px;
+    width:fit-content;
     height: 4px;
     border-radius: 2px;
 }

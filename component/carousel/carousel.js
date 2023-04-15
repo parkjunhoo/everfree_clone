@@ -1,31 +1,47 @@
 class Carousel extends HTMLElement{
-    instance;
+    
+    
+    #_index;
+    get index(){
+        return this._index;
+    }
+    set index(idx){
+        this.index = idx;
+        this.move();
+    }
 
-    index;
-    itemList;
-    items;
-    maxCount;
+    #_count;
+    get count(){
+        return this._count;
+    }
+
+    #_itemContainer;
+
+
 
     
     dots = "";
 
     constructor(){
         super();
-        this.instance = this;
-        this.index = 0;
-        this.itemList = null;
-        this.items = [];
-        this.maxCount = 0;
+        this._index = 0;
+        this._itemContainer = null;
+        this._count = 0;
     }
 
 
     connectedCallback(){
+
+        //쿼리셀렉터로 .carouselItem을 모두 긁어와서 
+
+
         // HTML 구조
         //     <div class="carouselList">
-        //
+        //      innerHTML
         //     </div>
 
         //     <div class="carouselDotsDiv">
+        //      dots
         //     </div>
 
         //     <div class="carouselArrowsDiv">
@@ -38,10 +54,10 @@ class Carousel extends HTMLElement{
         //         </button>
         //     </div>
         
-        let items = this.querySelectorAll(".carouselItem");
-        this.maxCount = items.length;
-        this.itemList = document.createElement("div");
-        this.itemList.classList.add("carouselList")
+        let _itemList = this.querySelectorAll(".carouselItem");
+        this._count = _itemList.length;
+        this._itemContainer = document.createElement("div");
+        this._itemContainer.classList.add("carouselList")
 
         let dotsDiv = document.createElement('div');
         dotsDiv.classList.add("carouselDotsDiv")
@@ -66,9 +82,9 @@ class Carousel extends HTMLElement{
             this.arrowMove(1);
         });
 
-        this.appendChild(this.itemList);
-            items.forEach((i)=>{
-                this.itemList.appendChild(i);
+        this.appendChild(this._itemContainer);
+            _itemList.forEach((i)=>{
+                this._itemContainer.appendChild(i);
             })
         this.appendChild(dotsDiv);
 
@@ -79,7 +95,7 @@ class Carousel extends HTMLElement{
                 nextArrowBtn.appendChild(nextArrow);
         
         
-        for(let i=0; i<items.length; i++){
+        for(let i=0; i<_itemList.length; i++){
 
             let dotBtnDiv = document.createElement("div");
             let dot = document.createElement("div");
@@ -96,20 +112,35 @@ class Carousel extends HTMLElement{
     }
 
 
-
+    /**
+     * arrow버튼에 바인딩된 이벤트 인덱스를 변경하고 move를 호출해 해당 이동시킵니다.
+     * @param {number} direction 1을 넣을시 앞으로, -1을 넣을시 뒤로 이동
+     */
     arrowMove(direction){
-        let check = this.index + direction;
-        if(check < this.maxCount && check >= 0){
-            this.index += direction;
+        let check = this._index + direction;
+        if(check < this._count && check >= 0){
+            this._index += direction;
         }else return;
         this.move();
     }
+
+    /**
+     * dot버튼에 바인딩된 이벤트 인덱스를 변경하고 move를 호출해 해당 이동시킵니다.
+     * @param {number} idx idx의 값을 인덱스로 지정하고 move를 호출해서 이동
+     */
     dotMove(idx){
-        this.index = idx;
+        if(idx>this.count || idx<0) return;
+        if(this._index == idx) return;
+        this._index = idx;
         this.move();
     }
+
+    /**
+     * 현재 index로 itemContainer의 left값을 조정해 화면에 보이게 이동시킵니다.
+     */
     move(){
-        this.itemList.style.left = `-${this.index*100}%`;
+        
+        this._itemContainer.style.left = `-${this._index*100}%`;
     }
 }
 customElements.define("carousel-component", Carousel);
