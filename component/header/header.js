@@ -13,19 +13,19 @@ class Header extends HTMLElement{
                 ]
             },
             {
-                name:"Best",
+                name:"DB에서",
                 subMenu:[
                     "Best"
                 ]
             },
             {
-                name:"Outer",
+                name:"받아와야",
                 subMenu:[
                     "Outer"
                 ]
             },
             {
-                name:"Top",
+                name:"할것같습니다",
                 subMenu:[
                     "Shirt",
                     "Long Sleeve",
@@ -34,7 +34,7 @@ class Header extends HTMLElement{
                 ]
             },
             {
-                name:"Bottom",
+                name:"JSON?",
                 subMenu:[
                     "Jean",
                     "Pants",
