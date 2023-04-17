@@ -24,57 +24,121 @@ class Header extends HTMLElement{
             {
                 name:"New(10% SALE)",
                 subMenu:[
-                    "New(10% SALE)"
+                    {
+                        name:"New(10% SALE)",
+                        korName:"신상(10% SALE)",
+                        hightlight:true
+                    }
                 ]
             },
             {
                 name:"Best",
                 subMenu:[
-                    "Best"
+                    {
+                        name:"Best",
+                        korName:"베스트",
+                        hightlight:true
+                    }
                 ]
             },
             {
                 name:"Outer",
                 subMenu:[
-                    "Outer"
+                    {
+                        name:"Outer",
+                        korName:"아우터",
+                        hightlight:true
+                    }
                 ]
             },
             {
                 name:"Top",
                 subMenu:[
-                    "Shirt",
-                    "Long Sleeve",
-                    "Knit",
-                    "Short Sleeve"
+                    {
+                        name:"Shirt",
+                        korName:"셔츠",
+                        hightlight:false
+                    },
+                    {
+                        name:"Long Sleeve",
+                        korName:"긴팔",
+                        hightlight:true
+                    },
+                    {
+                        name:"Knit",
+                        korName:"니트",
+                        hightlight:false
+                    },
+                    {
+                        name:"Short Sleeve",
+                        korName:"반팔",
+                        hightlight:false
+                    }
                 ]
             },
             {
                 name:"Botton",
                 subMenu:[
-                    "Jean",
-                    "Pants",
-                    "Short Guys",
+                    {
+                        name:"Jean",
+                        korName:"진",
+                        hightlight:false
+                    },
+                    {
+                        name:"Pants",
+                        korName:"팬츠",
+                        hightlight:true
+                    },
+                    {
+                        name:"Short Guys",
+                        korName:"숏 가이즈",
+                        hightlight:false
+                    }
                 ]
             },
             {
                 name:"Acc",
                 subMenu:[
-                    "Shoes",
-                    "Bag",
-                    "Accessories",
-                    "Season off"
+                    {
+                        name:"Shoes",
+                        korName:"슈즈",
+                        hightlight:true
+                    },
+                    {
+                        name:"Bag",
+                        korName:"가방",
+                        hightlight:false
+                    },
+                    {
+                        name:"Accessories",
+                        korName:"액세서리",
+                        hightlight:false
+                    },
+                    {
+                        name:"Season off",
+                        korName:"시즌오프",
+                        hightlight:false
+                    }
                 ]
             },
             {
                 name:"Suit",
                 subMenu:[
-                    "Suit"
+                    {
+                        name:"Suit",
+                        korName:"수트",
+                        hightlight:true
+                    }
                 ]
             },
             {
                 name:"SET EVENT",
                 subMenu:[
-                    "SET EVENT"
+                    {
+                        name:"SET EVENT",
+                        korName:"세트 이벤트",
+                        hightlight:true
+                    }
                 ]
             }
         ];
@@ -103,6 +167,9 @@ class Header extends HTMLElement{
         headLink.type = "text/css";
         headLink.href = "../component/header/header.css";
         head.appendChild(headLink);
+        if(this.hasAttribute("mColor")){
+            headerNav.style.backgroundColor = this.getAttribute("bgColor");
+        }
         //<header>
         // <div id="searchBarDiv" style="display: block; overflow: hidden;">
         //         <div class="SearchExitBtn"><span>✖</span></div>     
@@ -300,8 +367,17 @@ class Header extends HTMLElement{
                                 let li = document.createElement("li");
                                 let p = document.createElement("p");
                                 li.appendChild(p);
-                                p.innerHTML = this._textMenuList[i].subMenu[o];
-                                if(this.hasAttribute("smTextColor")){
+                                p.textContent = this._textMenuList[i].subMenu[o].name;
+                                li.addEventListener("mouseenter", () =>{
+                                    p.textContent = this._textMenuList[i].subMenu[o].korName;
+                                });
+                                li.addEventListener("mouseleave", () =>{
+                                    p.textContent = this._textMenuList[i].subMenu[o].name;
+                                });
+                                if(this._textMenuList[i].subMenu[o].hightlight)
+                                {
+                                    p.style.color= "red";
+                                }else if(this.hasAttribute("smTextColor")){
                                     p.style.color= this.getAttribute("smTextColor");
                                 }
                                 dropList.appendChild(li);
@@ -343,6 +419,11 @@ class Header extends HTMLElement{
                     searchSVGPath.setAttribute("d","M794 960 525.787 692Q496 714.923 457.541 727.962 419.082 741 373.438 741q-115.311 0-193.875-78.703Q101 583.594 101 470.797T179.703 279.5q78.703-78.5 191.5-78.5T562.5 279.644Q641 358.288 641 471.15q0 45.85-13 83.35-13 37.5-38 71.5l270 268-66 66ZM371.441 650q75.985 0 127.272-51.542Q550 546.917 550 471.412q0-75.505-51.346-127.459Q447.309 292 371.529 292q-76.612 0-128.071 51.953Q192 395.907 192 471.412t51.311 127.046Q294.623 650 371.441 650Z");
                     searchSVG.appendChild(searchSVGPath);
                     headerNavIconMenu.appendChild(searchSVG);
+                    if(this.hasAttribute("mTextColor")){
+                        memberSVG.style.fill= this.getAttribute("mTextColor");
+                        mallSVG.style.fill= this.getAttribute("mTextColor");
+                        searchSVG.style.fill= this.getAttribute("mTextColor");
+                    }
 
                 headerNav.appendChild(headerNavIconMenu);
 
@@ -356,6 +437,9 @@ class Header extends HTMLElement{
                     menuSVGPath.setAttribute("d","M105 841v-91h750v91H105Zm0-219v-91h750v91H105Zm0-220v-92h750v92H105Z");
                     menuSVG.appendChild(menuSVGPath);
                     headerNavMenuBtn.appendChild(menuSVG);
+                    if(this.hasAttribute("mTextColor")){
+                        menuSVG.style.fill= this.getAttribute("mTextColor");
+                    }
                 headerNav.appendChild(headerNavMenuBtn);
     }
     

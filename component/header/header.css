@@ -94,9 +94,13 @@ header{
     width: 0px;
     opacity: 0;
 }
-
+.dropList li{
+    width: fit-content;
+    pointer-events : none;
+}
 .dropList li>p{
-    padding: 0 25px 0 25px;
+    padding: 0px 25px 0 25px;
+    cursor: pointer;
 }
 .dropList *{
     height: 0px;
@@ -310,6 +314,7 @@ header:hover #headerNavIconMenu svg{
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
 }
 .dropListHeader>li:hover>.dropList *{
+    pointer-events : auto;
     height: auto;
 }
 
