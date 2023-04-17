@@ -14,7 +14,7 @@ header{
     font-weight: 500;
     letter-spacing: 1px;
     line-height: 20px;
-    z-index: 999;
+    z-index: 990;
     overflow: visible;
 }
 
@@ -116,6 +116,7 @@ header{
     width: auto;
     max-height: 25px;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 
@@ -128,6 +129,152 @@ header{
     visibility: hidden;
     padding: 0 25px;
     fill: white;
+}
+#headerNavMenuBtn svg{
+    cursor: pointer;
+}
+
+#searchBarDiv{
+    display: none;
+    position: fixed;
+    z-index: 991;
+    background-color: transparent;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    top:0;
+    left:0;
+}
+.SearchExitBtn{
+    top:0;
+    left:0;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    z-index: 994;
+    width: 100%;
+}
+.SearchExitBtn span{
+    padding: 20px 40px 0 0;
+    font-size: 30px;
+    cursor: pointer;
+    color:#aaa;
+}
+#searchBarDiv h1{
+    align-self: center;
+    color :#222;
+    font-size: 45px;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    font-weight: bold;
+}
+
+#searchBarDiv h2{
+    color :#222;
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    font-weight: bold;
+}
+
+#searchBar span{
+    color :#aaa;
+    text-decoration: none;
+    font-size: 45px;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    font-weight: bold;
+    margin: auto 10px;
+    cursor: pointer;
+    
+}
+#searchBarDiv span:hover{
+    transition: color .5s;
+    color :black;
+}
+
+#searchBar{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top:-32vh;
+    left:0;
+    width: 100%;
+    height: 32vh;
+    background-color: #fbfbfb;
+    z-index: 993;
+}
+.openSearchBar{
+    animation: openSearchBar .5s forwards;
+}
+.closeSearchBar{
+    animation: closeSearchBar .5s forwards;
+}
+@keyframes openSearchBar {
+    0%{
+        top:-32vh;
+    }
+    100%{
+        top:0;
+    }
+}
+@keyframes closeSearchBar {
+    0%{
+        top:0;
+    }
+    100%{
+        top:-32vh;
+    }
+}
+
+.searchLeftDiv{
+    padding: 12vh 0 0 10%;
+    width: 43%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.searchRightDiv{
+    padding: 12vh 5% 0 0;
+    width: 53%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.searchInnerDiv{
+    display: flex;
+    padding-bottom: 10px;
+    height: 72px;
+}
+.borderBottom2{
+    border-bottom: 2px solid black;
+}
+
+
+#searchForm{
+    width: 100%;
+}
+#headerSearchInput{
+    border: none;
+    background-color: #fbfbfb;
+    height: 70px;
+    width: 100%;
+
+    align-self: flex-end;
+    color :#222;
+    font-size: 45px;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    font-weight: bold;
+}
+#headerSearchInput:focus {
+    outline: none;
+}
+
+
+
+#searchBarBG{
+    position: absolute;
+    z-index: 992;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
 }
 
 /* -------------------------------- *//* -------------------------------- */
@@ -176,6 +323,20 @@ header:hover #headerNavIconMenu svg{
         height: 100%;
         width: 30%;
     }
+    #searchBar{
+        flex-wrap: wrap;
+        height: fit-content;
+        padding-top:10%;
+    }
+    .searchLeftDiv{
+        width: 100%;
+        padding: 0% 5% 5% 5%;
+    }
+    .searchLeftDiv{
+        width: 100%;
+        padding: 0% 5% 5% 5%;
+    }
+
 }
 @media (max-width: 1000px) {
     header:hover{
