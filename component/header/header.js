@@ -1,10 +1,21 @@
 class Header extends HTMLElement{
+    /**
+     * 속성
+     * mTextColor   : 헤더의 기본메뉴(?)텍스트 의 색을 지정합니다.
+     * smTextColor  : 헤더의 서브메뉴(?마우스올리면 내려오는 메뉴)의 텍스트 색을 지정합니다.
+     * bgColor      : 헤더의 기본 배경색을 지정합니당
+     * bgHoverColor : 헤더위에 마우스를 올렸을때 내려오는 배경의 색을 지정합니다.
+     * 
+     */
     #_logoSrc
     #_searchBarDiv
     #_searchBar
     #_textMenuList
     #_recommendTags
-    
+
+    #_tColor
+    #_bgColor
+
 
     constructor(){
         super();
@@ -229,6 +240,9 @@ class Header extends HTMLElement{
 
             let headerNav = document.createElement("div");
                 headerNav.id = "headerNav";
+                if(this.hasAttribute("bgColor")){
+                    headerNav.style.backgroundColor = this.getAttribute("bgColor");
+                }
                 header.appendChild(headerNav);
 
                 
@@ -236,6 +250,9 @@ class Header extends HTMLElement{
                 let headerMenuBackground = document.createElement("div");
                 headerMenuBackground.id = "headerMenuBackground";
                 headerNav.appendChild(headerMenuBackground);
+                if(this.hasAttribute("bgHoverColor")){
+                    headerMenuBackground.style.backgroundColor = this.getAttribute("bgHoverColor");
+                }
 
                 let headerNavLogoHolder = document.createElement("div");
                 headerNavLogoHolder.id = "headerNavLogoHolder";
@@ -267,6 +284,9 @@ class Header extends HTMLElement{
                             nameP.innerHTML = this._textMenuList[i].name;
                                 let menuListUnderline = document.createElement("div");
                                 menuListUnderline.classList.add("menuListUnderline");
+                                if(this.hasAttribute("mTextColor")){
+                                    nameP.style.color= this.getAttribute("mTextColor");
+                                }
                                 nameP.appendChild(menuListUnderline);
                             nameDiv.appendChild(nameP);
                             li.appendChild(nameDiv);
@@ -281,6 +301,9 @@ class Header extends HTMLElement{
                                 let p = document.createElement("p");
                                 li.appendChild(p);
                                 p.innerHTML = this._textMenuList[i].subMenu[o];
+                                if(this.hasAttribute("smTextColor")){
+                                    p.style.color= this.getAttribute("smTextColor");
+                                }
                                 dropList.appendChild(li);
                             }
                         }
