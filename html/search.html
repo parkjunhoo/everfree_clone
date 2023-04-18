@@ -13,7 +13,8 @@
                 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="../css/test.css"/>
+
+        <link rel="stylesheet" type="text/css" href="../css/search.css"/>
     </head>
 
 
@@ -22,14 +23,37 @@
 
     
     <body>
-        <header-component mTextColor="black" bgHoverColor="#F9F9F9"></header-component>
+        <header-component searchBtnAction="focusToSearchBar()" mTextColor="black" bgHoverColor="#F9F9F9"></header-component>
 
-        <div style="background-color: white; height: 50vh; padding-top:80px;">
-            <h1 style="font-size:100px; color:yellowgreen;">otherPageContent</h1>
-        </div>
+        <section id="searchResultSection">
+            <div class="searchPageOuter">
+                <form action="" id="searchPageForm" name="searchPageForm">
+                    <h1>#</h1>
+                    <input type="text" id="searchPageInput" name="searchPageInput"/>
+                    <div id="searchformOutline">
+                        <p>검색어 입력 후 엔터</p>
+                    </div>
+                </form>
+
+                <div id="searchResultDiv">
+                    <p id="searchResCountText">검색어와 관련된 230개의 상품을 찾았습니다.</p>
+                    <span onclick="focusToSearchBar()" class="anotherSearch">다른 검색어로 찾기</span>
+
+                    <div id="searchResultTable">
+
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <footer-component></footer-component>
+
+        
+        <script src="../javascript/searchPage.js"></script>
         <script src="../component/header/header.js"></script>
         <script src="../component/footer/footer.js"></script>
+
+        <script src="../component/hoverbox/hoverbox.js"></script>
     </body>
+    
 </html>

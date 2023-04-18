@@ -31,6 +31,10 @@
     transform:translateY(-100%);
     transition: .7s;
 }
+.opacityAnim{
+    opacity: 0;
+    transition: .7s;
+}
 .superBox:hover .afterBox{
     opacity: 1;
 }
@@ -40,4 +44,7 @@
 }
 .superBox:hover .downAnim{
     transform:translateY(0);
+}
+.superBox:hover .opacityAnim{
+    opacity: 1;
 }

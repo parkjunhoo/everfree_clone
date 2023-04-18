@@ -409,9 +409,14 @@ class Header extends HTMLElement{
                     headerNavIconMenu.appendChild(mallSVG);
 
                     let searchSVG = document.createElementNS("http://www.w3.org/2000/svg","svg");
-                    searchSVG.addEventListener("click" , ()=>{
-                        this.openSearchBar();
-                    });
+                        searchSVG.addEventListener("click" , ()=>{
+                            if(this.hasAttribute("searchBtnAction")){
+                                eval(this.getAttribute("searchBtnAction"));
+                            }else{
+                                this.openSearchBar();
+                            }
+                        });
+                    
                     searchSVG.setAttribute("width","48");
                     searchSVG.setAttribute("height","48");
                     searchSVG.setAttribute("viewBox","0 96 960 960");

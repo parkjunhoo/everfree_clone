@@ -1,0 +1,118 @@
+*{
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+}
+#searchResultSection{
+    max-width: 100%;
+    padding-top : 80px;
+}
+
+.searchPageOuter{
+    max-width: 100%;
+    padding : 10vh 10%;
+}
+
+#searchPageForm{
+    position: relative;
+    width: 35%;
+    display: flex;
+}
+#searchPageForm>h1{
+    align-self: center;
+    color :#222;
+    font-size: 45px;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    font-weight: bold;
+}
+#searchPageInput{
+    border: none;
+    height: 70px;
+    width: 100%;
+    color :#222;
+    font-size: 45px;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    font-weight: bold;
+}
+#searchformOutline{
+    width: 100%;
+    top:100%;
+    transition: .3s;
+    position: absolute;
+    border-top: 2px solid black;
+    opacity: 0;
+}
+#searchformOutline p{
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    padding: 10px 0 0 30px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #949494;
+    transition: .3s;
+}
+#searchPageInput:focus {
+    outline: none;
+}
+#searchPageInput:focus~#searchformOutline{
+    opacity: 1;
+}
+
+#searchResultDiv{
+    padding-top:4%;
+}
+#searchResultDiv>p{
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    padding: 10px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #222;
+}
+#searchResultDiv>span{
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+#searchResultTable{
+    display: flex;
+    flex-wrap:wrap;
+    padding-top : 3%;
+    padding-bottom: 80px;
+}
+.searchResItemDiv{
+    padding: 0px 2px 100px 2px;
+    width: 23%;
+    margin : 0 auto;
+    height: fit-content;
+    cursor: pointer;
+}
+.searchResProduct{
+    display: block;
+    width: 100%;
+    height: 20vw;
+}
+.searchResDesc h1{
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: black;
+}
+.searchResDesc h2{
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: black;
+}
+.searchResDesc h3{
+    display: block;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    margin: 20px 0 0 0;
+    font-size: 12px;
+    color: #aaa;
+}
+
