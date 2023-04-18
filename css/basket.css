@@ -120,8 +120,7 @@ input[type=number] {
 }
 
 #basketSummaryDiv{
-    
-    margin-top: 30px;
+    margin-top: 40px;
     width: 100%;
     display: flex;
 }
@@ -189,4 +188,27 @@ input[type=number] {
 #basketCheckOutBtn:hover{
     background-color: black;
     color: white;
+}
+
+
+@media (max-width: 1100px) {
+    .basketTitleDiv h1{
+        font-size: 30px;
+    }
+    .basketOuter{
+        width: 95%;
+    }
+    .basketForm{
+        flex-wrap: wrap;
+        height: fit-content;
+    }
+    .basketItemImgDiv{
+        height: 70px;
+        margin: auto 10px;
+    }
+    .infoP{
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
 }

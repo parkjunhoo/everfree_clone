@@ -11,9 +11,11 @@ totalInfo = {
 
 
 function calcTotal(){
+    
     for(let i =0; i<basketList.length; i++){
         totalInfo.subTotal += basketList[i].price * basketList[i].amount;
     }
+    if(totalInfo.subTotal >= 50000) totalInfo.shipping = 0;
     totalInfo.total = totalInfo.subTotal + totalInfo.shipping;
 }
 function syncSummary(){
@@ -201,8 +203,11 @@ let basketSection = document.getElementById("basketSection");
         calcTotal();
 
         let basketSummaryDiv = document.createElement("div");
+        basketSummaryDiv.id = "basketSummaryDiv";
         basketOuter.appendChild(basketSummaryDiv);
+        
             let summaryInfoP = document.createElement("p");
+            summaryInfoP.classList.add("infoP");
             summaryInfoP.textContent = "5만원 이상 구매시 무료배송";
             basketSummaryDiv.appendChild(summaryInfoP);
 
