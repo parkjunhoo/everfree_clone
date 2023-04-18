@@ -1,0 +1,192 @@
+*{
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+}
+#basketSection{
+    max-width: 100%;
+    padding-top : 80px;
+}
+.basketOuter{
+    width: 80%;
+    margin: 0 auto;
+}
+.basketTitleDiv{
+    width: 100%;
+    padding: 5% 0;
+    font-size: 46px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    color:#222;
+    font-weight: bold;
+
+}
+
+.basketForm{
+    width: 100%;
+    height: 25vh;
+    border-bottom: 1px solid #dcdcdc;
+    display: flex;
+}
+
+.basketDeleteDiv{
+    height: 100%;
+    display: flex;
+}
+.basketDeleteDiv span{
+    align-self: center;
+    cursor: pointer;
+}
+.basketDeleteDiv span::selection{
+    background-color: transparent;
+}
+
+.basketItemImgDiv{
+    width: 15%;
+    margin: 0 35px;
+}
+.basketItemImgDiv img{
+    height: 100%;
+    width: auto;
+}
+
+.basketItemDescDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+.basketItemDescDiv h1{
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+.basketItemDescDiv h3{
+    margin-top: 15px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+}
+
+.basketItemAmount{
+    margin: auto 0 auto auto;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: 120px;
+    height: 36px;
+}
+
+.basketItemAmount input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.basketItemAmount .amountBtn{
+    position: absolute;
+    cursor: pointer;
+    width: 10%;
+    padding: 8px 15px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+.basketItemAmount .amountMinusBtn{
+    left: 0;
+}
+.basketItemAmount .amountPlusBtn{
+    right: 0;
+}
+
+.basketItemPriceDiv{
+    width: 15%;
+    margin-left: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.basketItemPriceDiv h1{
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    white-space: nowrap;
+}
+
+#basketSummaryDiv{
+    
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+}
+
+#basketSummaryDiv .infoP{
+    font-size: 14px;
+    color: #222;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#basketSummaryListDiv{
+    margin-left: auto;
+    width: 100%;
+    max-width: 350px;
+}
+#basketSummaryListDiv hr{
+    background-color: #eaeaea;
+    border: 0px;
+    height: .5px;
+    margin: 25px 0;
+}
+#basketSummaryListDiv .summaryList{
+    display: flex;
+    margin: 10px 0;
+}
+#basketSummaryListDiv .summaryList .label{
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+#basketSummaryListDiv .summaryList .value{
+    margin-left: auto;
+    margin-left: auto;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: right;
+}
+
+#basketTotalDiv #totalLabel{
+    font-weight: bold;
+    font-size: 18px;
+}
+#basketTotalDiv #totalValue{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#basketCheckOutBtn{
+    border: 2px solid black;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+#basketCheckOutBtn span{
+    align-self: center;
+}
+#basketCheckOutBtn:hover{
+    background-color: black;
+    color: white;
+}
