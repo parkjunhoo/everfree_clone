@@ -5,6 +5,8 @@ class Header extends HTMLElement{
      * smTextColor  : 헤더의 서브메뉴(?마우스올리면 내려오는 메뉴)의 텍스트 색을 지정합니다.
      * bgColor      : 헤더의 기본 배경색을 지정합니당
      * bgHoverColor : 헤더위에 마우스를 올렸을때 내려오는 배경의 색을 지정합니다.
+     * 
+     * (logo 옵션은 하나만 주면안되고 둘다 지정해야합니당!!)
      * logoDark     : true = 다크로고 , false = 흰색로고
      * logoHoverDark: true = 다크로고 , false = 흰색로고
      */
