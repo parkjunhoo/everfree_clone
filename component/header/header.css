@@ -114,6 +114,7 @@ header{
     flex-wrap: wrap;
     align-content: center;
     margin-left: auto;
+    margin-right:25px;
     fill:white;
 }
 /* 헤더 아이콘메뉴 svg 조정 */
@@ -126,18 +127,7 @@ header{
 
 
 
-/* 버거메뉴 버튼 width 작을때나타남*/
-#headerNavMenuBtn{
-    float: right;
-    width: 0;
-    align-self: center;
-    visibility: hidden;
-    padding: 0 25px;
-    fill: white;
-}
-#headerNavMenuBtn svg{
-    cursor: pointer;
-}
+
 
 #searchBarDiv{
     display: none;
@@ -203,7 +193,8 @@ header{
     top:-32vh;
     left:0;
     width: 100%;
-    height: 32vh;
+    min-height: 32vh;
+    padding-bottom: 30px;
     background-color: #fbfbfb;
     z-index: 993;
 }
@@ -282,6 +273,38 @@ header{
     background-color: rgba(0,0,0,.3);
 }
 
+
+/* 버거메뉴 버튼 width 작을때나타남*/
+#headerNavMenuBtn{
+    display: none;
+    width: 50px;
+    height: 35px;
+    cursor: pointer;
+    align-self: center;
+    margin-left: auto;
+    padding: 0 25px;
+}
+
+.headerMenuBtnIcon{
+    align-self: center;
+    margin-top: 10px;
+    background-color: white;
+    width: 30px;
+    height: 2px;
+    transition: 0.5s ease;
+}
+#headerNavMenuBtn:hover .headerMenuBtnIcon:nth-child(1){
+    position: absolute;
+    transform: rotate(45deg);
+}
+#headerNavMenuBtn:hover .headerMenuBtnIcon:nth-child(2){
+    position: absolute;
+    top:0;
+    bottom: 10px;
+    
+    transform: rotate(-45deg);
+}
+
 /* -------------------------------- *//* -------------------------------- */
 
 
@@ -297,37 +320,37 @@ header:hover #headerNavIconMenu svg{
 }
 
 /* 헤더 호버시 배경 내려옴 */
- header:hover #headerMenuBackground{
-    opacity: 1;
-    height: 100%;
-    display: block;
-    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
-}
-
 .dropListHeader>li:hover .menuListUnderline{
     width: 100%;
 }
-.dropListHeader>li:hover>.dropList{
-    height: fit-content;
-    opacity: 1;
-    padding-bottom: 30px;
-    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
-}
-.dropListHeader>li:hover>.dropList *{
-    pointer-events : auto;
-    height: auto;
-}
+
 
 
 /* 반응형 */
+@media (min-width: 1100px){
+    header:hover #headerMenuBackground{
+        opacity: 1;
+        height: 100%;
+        display: block;
+        transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    }
+    .dropListHeader>li:hover>.dropList{
+        height: fit-content;
+        opacity: 1;
+        padding-bottom: 30px;
+        transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    }
+    .dropListHeader>li:hover>.dropList *{
+        pointer-events : auto;
+        height: auto;
+    }
+}
+
 @media (max-width: 1300px) {
     #headerNavIconMenu {
         width: 0px;
-        visibility: hidden;
-    }
-    #headerNavMenuBtn{
-        height: 100%;
-        width: 30%;
+        display: none;
+        pointer-events: none;
     }
     #searchBar{
         flex-wrap: wrap;
@@ -344,17 +367,15 @@ header:hover #headerNavIconMenu svg{
     }
 
 }
-@media (max-width: 1000px) {
-    header:hover{
-        pointer-events: none;
-    }
-    #headerNavMenuBtn{
-        padding: 0 25px 0 25px;
-        width: 50px;
-        visibility: visible;
-    }
+@media (max-width: 1100px) {
     #headerNavTextMenu{
         width: 0px;
         visibility: hidden;
+    }
+
+    #headerNavMenuBtn{
+        position: relative;
+        display: flex;
+        flex-direction: column;
     }
 }

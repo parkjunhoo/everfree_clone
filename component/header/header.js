@@ -434,17 +434,24 @@ class Header extends HTMLElement{
 
                 let headerNavMenuBtn = document.createElement("div");
                 headerNavMenuBtn.id = "headerNavMenuBtn";
-                    let menuSVG = document.createElementNS("http://www.w3.org/2000/svg","svg");
-                    menuSVG.setAttribute("width","48");
-                    menuSVG.setAttribute("height","48");
-                    menuSVG.setAttribute("viewBox","0 96 960 960");
-                    let menuSVGPath = document.createElementNS("http://www.w3.org/2000/svg","path");
-                    menuSVGPath.setAttribute("d","M105 841v-91h750v91H105Zm0-219v-91h750v91H105Zm0-220v-92h750v92H105Z");
-                    menuSVG.appendChild(menuSVGPath);
-                    headerNavMenuBtn.appendChild(menuSVG);
-                    if(this.hasAttribute("mTextColor")){
-                        menuSVG.style.fill= this.getAttribute("mTextColor");
-                    }
+                    let menuBtnIcon1 = document.createElement("div");
+                    menuBtnIcon1.classList.add("headerMenuBtnIcon");
+                    let menuBtnIcon2 = document.createElement("div");
+                    menuBtnIcon2.classList.add("headerMenuBtnIcon");
+
+                    headerNavMenuBtn.appendChild(menuBtnIcon1);
+                    headerNavMenuBtn.appendChild(menuBtnIcon2);
+                    // let menuSVG = document.createElementNS("http://www.w3.org/2000/svg","svg");
+                    // menuSVG.setAttribute("width","48");
+                    // menuSVG.setAttribute("height","48");
+                    // menuSVG.setAttribute("viewBox","0 96 960 960");
+                    // let menuSVGPath = document.createElementNS("http://www.w3.org/2000/svg","path");
+                    // menuSVGPath.setAttribute("d","M105 841v-91h750v91H105Zm0-219v-91h750v91H105Zm0-220v-92h750v92H105Z");
+                    // menuSVG.appendChild(menuSVGPath);
+                    // headerNavMenuBtn.appendChild(menuSVG);
+                    // if(this.hasAttribute("mTextColor")){
+                    //     menuSVG.style.fill= this.getAttribute("mTextColor");
+                    // }
                 headerNav.appendChild(headerNavMenuBtn);
     }
     
