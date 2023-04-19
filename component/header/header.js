@@ -5,9 +5,11 @@ class Header extends HTMLElement{
      * smTextColor  : 헤더의 서브메뉴(?마우스올리면 내려오는 메뉴)의 텍스트 색을 지정합니다.
      * bgColor      : 헤더의 기본 배경색을 지정합니당
      * bgHoverColor : 헤더위에 마우스를 올렸을때 내려오는 배경의 색을 지정합니다.
-     * 
+     * logoDark     : true = 다크로고 , false = 흰색로고
+     * logoHoverDark: true = 다크로고 , false = 흰색로고
      */
     #_logoSrc
+    #_logoDarkSrc
     #_searchBarDiv
     #_searchBar
     #_textMenuList
@@ -19,7 +21,9 @@ class Header extends HTMLElement{
 
     constructor(){
         super();
+        
         this._logoSrc = "../resources/images/logo.png";
+        this._logoDarkSrc = "../resources/images/logoDark.png";
         this._textMenuList = [
             {
                 name:"New(10% SALE)",
@@ -232,6 +236,25 @@ class Header extends HTMLElement{
         //</header>
 
         let header = document.createElement("header");
+        if(this.hasAttribute("logoDark") && this.hasAttribute("logoHoverDark")){
+            header.addEventListener("mouseover", ()=>{
+                if(window.innerWidth< 1300) return;
+                if(this.getAttribute("logoHoverDark")=="true"){
+                    headerLogoImg.src = this._logoDarkSrc;
+                }else{
+                    headerLogoImg.src = this._logoSrc;
+                }
+            });
+            header.addEventListener("mouseleave", ()=>{
+                if(window.innerWidth< 1300) return;
+                if(this.getAttribute("logoDark")=="true"){
+                    headerLogoImg.src = this._logoDarkSrc;
+                }else{
+                    headerLogoImg.src = this._logoSrc;
+                }
+            });
+        }
+        
         this.appendChild(header);
 
             this._searchBarDiv = document.createElement("div");
@@ -329,7 +352,16 @@ class Header extends HTMLElement{
                     headerNavLogoHolder.appendChild(logoA);
                         let headerLogoImg = document.createElement("img");
                         headerLogoImg.id="headerLogoImg";
-                        headerLogoImg.src = this._logoSrc;
+
+                        let logoDark = this.hasAttribute("logoDark");
+                        let logoSrc = "";
+                        if(logoDark){
+                            logoSrc = this.getAttribute("logoDark")=="true" ? this._logoDarkSrc : this._logoSrc
+                        }else{
+                            logoSrc = this._logoSrc;
+                        }
+                        headerLogoImg.src = logoSrc;
+
                         logoA.appendChild(headerLogoImg);
                 headerNav.appendChild(headerNavLogoHolder);
 

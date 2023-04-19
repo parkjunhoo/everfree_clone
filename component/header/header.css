@@ -6,6 +6,9 @@
          header -   |headerNav
 
 */
+*{
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+}
 header{
     position: fixed;
     width: 100%;
@@ -55,11 +58,17 @@ header{
     height:80px;
     z-index: 2;
     padding: 0 25px 0 25px;
+    display: flex;
+    justify-content: center;
+}
+#headerNavLogoHolder a{
+    align-self: center;
 }
 /* 헤더 로고 img */
 #headerLogoImg{
-    height: 100%;
-    width:auto;
+    height: auto;
+    max-height: 100%;
+    width:200px;
 }
 
 /* headerNavTextMenu *//* 헤더 Text 메뉴  */
