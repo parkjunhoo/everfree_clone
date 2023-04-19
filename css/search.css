@@ -116,3 +116,10 @@
     color: #aaa;
 }
 
+
+@media(max-width:1300px) {
+    #searchPageForm{
+        width: 100%;
+        margin-bottom:15px;
+    }
+}
