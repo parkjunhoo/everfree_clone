@@ -31,12 +31,13 @@ class Carousel extends HTMLElement{
 
 
     connectedCallback(){
-        let headLink = document.createElement("link");
-        let head = document.getElementsByTagName("head")[0];
-        headLink.rel = "stylesheet";
-        headLink.type = "text/css";
-        headLink.href = "../component/carousel/carousel.css";
-        head.appendChild(headLink);
+        // let headLink = document.createElement("link");
+        // let head = document.getElementsByTagName("head")[0];
+        // headLink.rel = "stylesheet";
+        // headLink.type = "text/css";
+        // headLink.href = "../component/carousel/carousel.css";
+        // head.appendChild(headLink);
+        
         // HTML 구조
         //     <div class="carouselList">
         //      innerHTML

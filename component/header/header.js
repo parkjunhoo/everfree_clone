@@ -23,7 +23,7 @@ class Header extends HTMLElement{
 
     constructor(){
         super();
-        
+        this.style.visibility = "hide";
         this._logoSrc = "../resources/images/logo.png";
         this._logoDarkSrc = "../resources/images/logoDark.png";
         this._textMenuList = [
@@ -167,12 +167,13 @@ class Header extends HTMLElement{
 
     connectedCallback(){
         
-        let headLink = document.createElement("link");
-        let head = document.getElementsByTagName("head")[0];
-        headLink.rel = "stylesheet";
-        headLink.type = "text/css";
-        headLink.href = "../component/header/header.css";
-        head.appendChild(headLink);
+        
+        // let headLink = document.createElement("link");
+        // let head = document.getElementsByTagName("head")[0];
+        // headLink.rel = "stylesheet";
+        // headLink.type = "text/css";
+        // headLink.href = "../component/header/header.css";
+        // head.appendChild(headLink);
         if(this.hasAttribute("mColor")){
             headerNav.style.backgroundColor = this.getAttribute("bgColor");
         }
@@ -487,6 +488,7 @@ class Header extends HTMLElement{
                     //     menuSVG.style.fill= this.getAttribute("mTextColor");
                     // }
                 headerNav.appendChild(headerNavMenuBtn);
+        this.style.visibility = "";
     }
     
     openSearchBar(){
@@ -504,6 +506,8 @@ class Header extends HTMLElement{
         }, 500);
 
     }
+
+    
 }
 
 customElements.define("header-component", Header);

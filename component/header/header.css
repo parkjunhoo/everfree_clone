@@ -20,6 +20,9 @@ header{
     z-index: 990;
     overflow: visible;
 }
+header p{
+    font-size: 13px;
+}
 
 /* 헤더 호버시 내려오는 배경 */
 #headerMenuBackground{
